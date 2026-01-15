@@ -1,4 +1,5 @@
-// working with xueyi xia
+// working with xueyi , weini
+
 
 //set the size, color, position for circle One.
 let circleOne = {
@@ -45,9 +46,9 @@ function setup() {
 // show three circle
 function draw() {
 
-    drawC1();
-    drawC2();
-    drawC3();
+    // drawC1();
+    // drawC2();
+    // drawC3();
 }
 
 //draw circle one
@@ -75,4 +76,23 @@ function drawC3() {
     fill(circleThree.r, circleThree.g, circleThree.b);
     ellipse(circleThree.x, circleThree.y, circleThree.width, circleThree.height);
     pop();
+}
+
+function drawEllipse(x, y, w, h, r, g, b) {
+    push();
+    noStroke();
+    fill(r, g, b);
+    ellipse(x, y, w, h);
+    pop();
+}
+
+function setup() {
+
+    createCanvas(800, 400);
+
+    background("#81a0e2ff");
+
+    drawEllipse(circleOne.x, circleOne.y, circleOne.width, circleOne.height, circleOne.r, circleOne.g, circleOne.b);
+    drawEllipse(circleTwo.x, circleTwo.y, circleTwo.width, circleTwo.height, circleTwo.r, circleTwo.g, circleTwo.b);
+    drawEllipse(circleThree.x, circleThree.y, circleThree.width, circleThree.height, circleThree.r, circleThree.g, circleThree.b);
 }
