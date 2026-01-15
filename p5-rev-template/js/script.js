@@ -1,6 +1,6 @@
 // working with xueyi , weini
 
-
+//Q1
 //set the size, color, position for circle One.
 let circleOne = {
     x: 50,
@@ -78,6 +78,7 @@ function drawC3() {
     pop();
 }
 
+//QU 2
 function drawEllipse(x, y, w, h, r, g, b) {
     push();
     noStroke();
@@ -96,3 +97,5 @@ function setup() {
     drawEllipse(circleTwo.x, circleTwo.y, circleTwo.width, circleTwo.height, circleTwo.r, circleTwo.g, circleTwo.b);
     drawEllipse(circleThree.x, circleThree.y, circleThree.width, circleThree.height, circleThree.r, circleThree.g, circleThree.b);
 }
+
+
