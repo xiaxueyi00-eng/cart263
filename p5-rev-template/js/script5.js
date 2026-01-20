@@ -1,3 +1,4 @@
+"use strict";
 // -------------------- VARIABLES --------------------
 let counter = 0;
 

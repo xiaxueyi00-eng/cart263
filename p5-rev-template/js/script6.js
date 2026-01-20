@@ -1,3 +1,4 @@
+"use strict";
 // ---------------- VARIABLES / CONSTS ----------------
 const TEXT_SIZE = 28;
 const TEXT_COLOR = 255;
