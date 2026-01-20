@@ -91,10 +91,10 @@ function drawCircle(x, y, r, a) {
 // -------------------- MOUSE CLICK --------------------
 function mousePressed() {
     if (checkCollisionWithSquare(orangeSquare)) {
-        counter++;
+        counter = counter + 1;
     }
 
     if (checkCollisionWithSquare(redSquare)) {
-        counter--;
+        counter = counter - 1;
     }
 }

@@ -1,3 +1,6 @@
+
+"use strict";
+
 // working with xueyi , weini
 
 //Q1
@@ -35,13 +38,13 @@ let circleThree = {
 }
 
 //draw the canvas and background color
-function setup() {
+// function setup() {
 
-    createCanvas(800, 400);
+//     createCanvas(800, 400);
 
-    background("#81a0e2ff");
+//     background("#81a0e2ff");
 
-}
+// }
 
 // show three circle
 function draw() {
@@ -97,5 +100,3 @@ function setup() {
     drawEllipse(circleTwo.x, circleTwo.y, circleTwo.width, circleTwo.height, circleTwo.r, circleTwo.g, circleTwo.b);
     drawEllipse(circleThree.x, circleThree.y, circleThree.width, circleThree.height, circleThree.r, circleThree.g, circleThree.b);
 }
-
-
