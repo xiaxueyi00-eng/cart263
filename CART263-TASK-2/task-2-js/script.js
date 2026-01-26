@@ -7,46 +7,46 @@ function setup() {
     /*** START PART ONE ACCESS */
     /* 1: all paragraph elements */
     /***CODE */
-    const allPTags = document.querySelectorAll("p");
-    console.log(allPTags);
-    /***OUTPUT: 
-     * let allPTags = document.getElementsByTagName("p");
-    •// 
-    
-    
-    /*************************************** */
-    /* 2: only the first paragraph element */
-    /***CODE */
-    const firstPTag = document.querySelector("p");
-    console.log(firstPTag);
-    /***OUTPUT:
-     * firstPTag -> the FIRST <p> element
-     * example: <p>...</p>
+    console.log(document.getElementsByTagName("p"));
+/***OUTPUT: 
+ * * HTMLCollection(9) [p#1, p#2.img-descript, p#3.img-descript, 
+ * p#4.img-descript, p#5.img-descript, p#6.img-descript, p#7.img-descript, 
+ * p#8.img-descript, p#9.img-descript]
      */
 
+
+
+
+    /*************************************** */
+    /* 2: only the first paragraph element */
+    /***CODE */  console.log(document.getElementsByTagName("p")[0]);
+    /***OUTPUT: <p id="1">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias perspiciatis blanditiis, et
+                 laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur ducimus
+                 officiis non
+                 quasi officia sit veniam!
+             </p>
+      * 
+      */
 
     /*************************************** */
     /* 3: all elements with the class inner-container */
     /***CODE */
-    const allInnerContainers = document.querySelectorAll(".inner-container");
-    console.log(allInnerContainers)
-    /***OUTPUT:
-     * allInnerContainers -> NodeList of ALL elements with class "inner-container"
-     * example: <div class="inner-container">...</div>
+    console.log(document.getElementsByClassName("inner-container"));
+    /***OUTPUT: HTMLCollection(8) [div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container]
+     * 
      */
-
-
 
     /*************************************** */
     /* 4: the last image element inside the element that has the class img-container */
     /***CODE */
-    const lastImgInImgContainer = document.querySelector(".img-container img:last-of-type");
-    console.log(lastImgInImgContainer);
-    /***OUTPUT:
-     * lastImgInImgContainer -> the LAST <img> element inside .img-container
-     * example: <img src="..." alt="...">
-     */
+    let imgsInContainers = document.querySelectorAll(".img-container img");
+    console.log(imgsInContainers[imgsInContainers.length - 1]);
 
+    /***OUTPUT:
+     /***OUTPUT:
+ * <img class="img-image" src="task-2-images/seventeen.png">
+ */
 
 
     /*************************************** */
@@ -54,90 +54,198 @@ function setup() {
     /* 5B: length of the list in 5A */
     /* 5C: the text content of the first element in the list from 5A */
     /***CODE */
-    const allH2Tags = document.querySelectorAll("h2");
-    console.log(allH2Tags);
-
-    const h2Length = allH2Tags.length;
-    console.log(h2Length);
-
-    const firstH2Text = allH2Tags[0]?.textContent;
-    console.log(firstH2Text);
-    /***OUTPUT: 
-     * allH2Tags -> HTMLCollection(3)[h2, h2, h2]
-     * h2Length -> 3
-     * firstH2Text -> "..."
+    console.log(document.querySelectorAll("h2")); // 5A
+    console.log(document.querySelectorAll("h2").length); // 5B
+    console.log(document.querySelectorAll("h2")[0].textContent); // 5C
+    /***OUTPUT: <h2> The header of this fancy page</h2>  A)
+     * 1 B)
+     * The header of this fancy page C)
      */
 
 
     /*************************************** */
     /* 6: the element with id name parent */
-    /***CODE */
-    const parentEl = document.getElementById("parent");
-    console.log(parentEl);
-    /***OUTPUT:
-     * parentEl -> the element whose id="parent"
-     * example: <div id="parent">...</div>
+   /***CODE */ console.log(document.getElementById("parent"));
+
+    /***OUTPUT: <section id="parent">
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/sixteen.png">
+                    </div>
+                    <p id="2" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/eight.png">
+                    </div>
+                    <p id="3" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/eleven.png">
+                    </div>
+                    <p id="4" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/fifteen.png">
+                    </div>
+                    <p id="5" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/five.png">
+                    </div>
+                    <p id="6" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/three.png">
+                    </div>
+                    <p id="7" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/twelve.png">
+                    </div>
+                    <p id="8" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-2-images/seventeen.png">
+                    </div>
+                    <p id="9" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+        </section>
+     * 
      */
 
     /*************************************** */
     /*** END PART ONE ACCESS */
 
 
-    /*************************************** */
-    /*** START PART TWO MODIFY */
-    /*************************************** */
-    /* 1: Select the first paragraph and replace the text within the paragraph... */
-    /***CODE */
-    // ---- TASK 1: CODE START ----
-    document.getElementById("1").textContent = "xueyi xia  2026/01/22";
-    /*************************************** */
-    /* 2: Select all elements in the HTML that have the class name content-container
-     and change the background color ... of first and second ...*/
-    /***CODE */
-    document.getElementsByClassName("content-container")[0].style.backgroundColor = "orange";
-    document.getElementsByClassName("content-container")[1].style.backgroundColor = "purple";
+    // /*************************************** */
+    // /*** START PART TWO MODIFY */
+    // /*************************************** */
+    // /* 1: Select the first paragraph and replace the text within the paragraph... */
+    // /***CODE */
+    // document.getElementById("1").textContent = "Xueyi Xia  2026/01/22";
+    // /*************************************** */
+    // /* 2: Select all elements in the HTML that have the class name content-container
+    //  and change the background color ... of first and second ...*/
+    // /***CODE */
+    // document.getElementsByClassName("content-container")[0].style.background = "orange";
+    // document.getElementsByClassName("content-container")[1].style.background = "purple";
+
+    // /*************************************** */
+    // /* 3: Change the src element of the first image element on the page to be ...
+    // /***CODE */
+    // document.getElementsByClassName("img-image")[0].src = "task-2-images/seven.png";
+
+    // /*************************************** */
+    // /* 4: Select the third paragraph element on the page and 
+    // replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
+    // /***CODE */ document.getElementById("3").innerHTML = "<h2>TEST 123</h2>";
+
+    // /*************************************** */
+    // /* 5: Select the fourth paragraph element on the page and 
+    // add to the existing content an h2 element containing the text `TEST 123`
+    // /***CODE */
+    // document.getElementById("4").innerHTML += "<h2>TEST 123</h2>";
+    // /*************************************** */
+    // /* 6: Select the fifth paragraph element on the page and add to the existing content
+    // an img element that holds `one.png`, and add the class newStyle to said paragraph element.
+    // /***CODE */
+    // let p5 = document.getElementById("5");
+    // p5.innerHTML += '<img src="task-2-images/one.png">';
+    // p5.classList.add("newStyle");
 
 
-    /*************************************** */
-    /* 3: Change the src element of the first image element on the page to be ...
-    /***CODE */
-    document.getElementsByTagName("img")[0].src = "task-2-images/seven.png";
-    /*************************************** */
-    /*************************************** */
-    /* 4: Select the third paragraph element on the page and 
-    replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-    /***CODE */
-    document.getElementsByTagName("p")[3].innerHTML = "<h2>TEST 123</h2>";
-    /*************************************** */
 
-    /*************************************** */
-    /* 5: Select the fourth paragraph element on the page and 
-    add to the existing content an h2 element containing the text `TEST 123`
-    /***CODE */
-    document.getElementsByTagName("p")[4].innerHTML += "<h2>TEST 123</h2>";
+    // /*************************************** */
+    // /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
+    // then access all elements with class name inner-container and save to a variable called `innerContainers`. 
+    // Next, iterate over the colors array, and for each color: 
+    // assign the element from innerContainers variable with the same index 
+    // (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
+    // a background using that color.
+    // /***CODE */
+    // // add the array
+    // let colors = ['red', 'blue', 'green', 'orange'];
 
-    /*************************************** */
-    /* 6: Select the fifth paragraph element on the page and add to the existing content 
-    an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-    /***CODE */
-    document.getElementsByTagName("p")[5].classList.add("newStyle");
-    document.getElementsByTagName("p")[5].innerHTML += "<img src='task-2-images/one.png' class='newStyle'>";
+    // // select all elements with class "inner-container"
+    // let innerContainers = document.getElementsByClassName("inner-container");
 
-    /*************************************** */
-    /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
-    then access all elements with class name inner-container and save to a variable called `innerContainers`. 
-    Next, iterate over the colors array, and for each color: 
-    assign the element from innerContainers variable with the same index 
-    (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
-    a background using that color.
-    /***CODE */
-    let colors = ['red', 'blue', 'green', 'orange'];
-    let innerContainers = document.getElementsByClassName("inner-container");
-    for (let i = 0; i < colors.length; i++) {
-        innerContainers[i].style.backgroundColor = colors[i];
-    }
-    /*************************************** */
-    /*** END PART TWO MODIFY */
+    // // iterate over colors and apply each one to the matching inner-container
+    // for (let i = 0; i < colors.length; i++) {
+    //     if (innerContainers[i]) {
+    //         innerContainers[i].style.backgroundColor = colors[i];
+    //     }
+    // }
+
+    // /*************************************** */
+    // /*** END PART TWO MODIFY */
 
 
     /*************************************** */
@@ -154,6 +262,14 @@ function setup() {
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
+    /*************************************** */
+    /* 1: NEW PARAGRAPHS */
+    /***CODE */
+
+    /*************************************** */
+    /* 1: NEW PARAGRAPHS */
+    /***CODE */
+
     // 1A
     let allPTagsThree = document.getElementsByTagName("p");
     console.log(allPTagsThree);
@@ -186,12 +302,13 @@ function setup() {
     }
 
     /***EXPLANATION::
-     * allPTagsThree collects ALL <p> elements on the page.
-     * The loop goes through the ORIGINAL set of paragraphs and, for each one,
-     * appends a NEW green paragraph inside it that says "using create Element".
-     * (We use originalLength because getElementsByTagName returns a LIVE collection,
-     * and adding new <p> elements would otherwise increase the length while looping.)
+     * allPTagsThree stores all <p> elements on the page.
+     * customCreateElement() creates a new <p> with the text "using create Element",
+     * sets a green background with white text, and appends it to the current parent paragraph.
+     * The for loop runs once per paragraph, so every original paragraph gets a new styled paragraph added.
      */
+
+
     /*************************************** */
     /* 2: GRID OF BOXES */
     /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
@@ -211,44 +328,55 @@ function setup() {
         and otherwise let it have a background of purple.</li>
     /* 2H: BONUS II: For every div in an even numbered row make it contain the text `EVEN`, 
         otherwise lat it have the content `ODD`.*/
-
     /***CODE */
+    // grid settings
+    let cols = 10;
+    let rows = 10;
+    let cellSize = 40;
 
-    // 2A - 2D
+    // parent for the grid
+    let newGrid = document.getElementById("new-grid");
+    console.log(newGrid);
+    /***OUTPUT:
+     * <div id="new-grid"> ... </div>   (or similar)
+     */
+
+    // allow absolute positioned children to layout correctly
+    newGrid.style.position = "relative";
+    newGrid.style.height = (rows * cellSize) + "px";
+
+    // 2A: function
     function customNewBoxCreate(parent) {
-        // 2B: create new div
+
+        // 2B: create new div with class testDiv
         let newDiv = document.createElement("div");
         newDiv.classList.add("testDiv");
 
-        // important for left/top positioning
+        // make it visible + positionable
         newDiv.style.position = "absolute";
+        newDiv.style.width = cellSize + "px";
+        newDiv.style.height = cellSize + "px";
+        newDiv.style.border = "1px solid black";
 
-        // 2C: append to parent
+        // 2C: append
         parent.appendChild(newDiv);
 
-        // 2D: return the new div
+        // 2D: return
         return newDiv;
     }
 
-    // parent for the grid
-    let gridParent = document.querySelector("#new-grid");
+    // 2E + 2F + BONUS I
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
 
-    // size of each box (adjust if needed)
-    let boxSize = 40;
+            let returnedDiv = customNewBoxCreate(newGrid);
 
-    // 2E - 2H: nested loops (10 rows x 10 columns)
-    for (let row = 0; row < 10; row++) {
-        for (let col = 0; col < 10; col++) {
+            // position
+            returnedDiv.style.left = (c * cellSize) + "px";
+            returnedDiv.style.top = (r * cellSize) + "px";
 
-            // call function + store returned element
-            let returnedDiv = customNewBoxCreate(gridParent);
-
-            // 2F: set x,y position
-            returnedDiv.style.left = (col * boxSize) + "px";
-            returnedDiv.style.top = (row * boxSize) + "px";
-
-            // 2G + 2H: even row vs odd row
-            if (row % 2 === 0) {
+            // BONUS I + BONUS II
+            if (r % 2 === 0) {
                 returnedDiv.style.backgroundColor = "white";
                 returnedDiv.textContent = "EVEN";
             } else {
@@ -257,23 +385,23 @@ function setup() {
             }
         }
     }
-
-    // 2: document how many elements are returned when selecting .testDiv
-    console.log(document.getElementsByClassName("testDiv"));
-    console.log(document.getElementsByClassName("testDiv").length);
+    // document how many elements are returned
+    let allTestDivs = document.getElementsByClassName("testDiv");
+    console.log(allTestDivs);
+    console.log("Number of testDiv elements:", allTestDivs.length);
 
     /***OUTPUT:
-     * HTMLCollection(...) [div.testDiv, div.testDiv, ...]
-     * 100
+     * HTMLCollection(100) [div.testDiv, div.testDiv, div.testDiv, ...]
+     * Number of testDiv elements: 100
      */
 
     /***EXPLANATION::
-     * The nested loop runs 10 rows x 10 columns = 100 times.
-     * Each loop creates one new div with class "testDiv" and appends it to #new-grid.
-     * Therefore selecting elements with class "testDiv" returns 100 elements.
-     * Even-numbered rows (row % 2 === 0) are white and show "EVEN";
-     * odd-numbered rows are purple and show "ODD".
+     * The nested for loop runs 10 rows x 10 columns = 100 times.
+     * Each time, customNewBoxCreate() creates and appends one <div class="testDiv"> into #new-grid.
+     * That is why selecting all elements with class "testDiv" returns 100 elements.
+     * BONUS I: even-numbered rows are white; odd-numbered rows are cornflowerblue.
      */
+
 
     /*************************************** */
     /* 3: GRID OF BOXES II */
@@ -288,58 +416,62 @@ function setup() {
             then the second a background of orange and the third yellow. */
     /*  3D: Finally, let each div contain the text content representing the associated remainder 
         when dividing by three. */
-
+    /***CODE */
+    /*************************************** */
+    /* 3: GRID OF BOXES II */
     /***CODE */
 
-    // parent for grid II
-    let gridParentThree = document.querySelector("#new-grid-three");
+    // parent element for the second grid
+    let newGridThree = document.getElementById("new-grid-three");
+    console.log(newGridThree);
+    /***OUTPUT:
+     * <div id="new-grid-three">...</div>
+     */
 
-    // reuse same box size (keep consistent with grid 1)
-    let boxSizeThree = 40;
+    // make sure children positioned with absolute work correctly
+    newGridThree.style.position = "relative";
+    newGridThree.style.height = (rows * cellSize) + "px";
 
-    // 3A - 3D
-    for (let row = 0; row < 10; row++) {
-        for (let col = 0; col < 10; col++) {
+    // 3A: ANOTHER nested loop (10 rows x 10 cols)
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
 
-            // create new div using the SAME function
-            let returnedDiv = customNewBoxCreate(gridParentThree);
+            // create a new div using the SAME function
+            let returnedDiv = customNewBoxCreate(newGridThree);
 
-            // position it (same logic)
-            returnedDiv.style.left = (col * boxSizeThree) + "px";
-            returnedDiv.style.top = (row * boxSizeThree) + "px";
+            // set position in the grid
+            returnedDiv.style.left = (c * cellSize) + "px";
+            returnedDiv.style.top = (r * cellSize) + "px";
 
-            // 3B: remainder when dividing column by 3
-            let remainder = col % 3;
+            // 3B: check remainder using % operator (based on column)
+            let rem = c % 3;
 
-            // 3C: color based on remainder
-            if (remainder === 0) {
+            // 3C: background color based on remainder
+            if (rem === 0) {
                 returnedDiv.style.backgroundColor = "red";
-            } else if (remainder === 1) {
+            } else if (rem === 1) {
                 returnedDiv.style.backgroundColor = "orange";
             } else {
                 returnedDiv.style.backgroundColor = "yellow";
             }
 
-            // 3D: show remainder text
-            returnedDiv.textContent = remainder;
+            // 3D: put remainder text inside the div
+            returnedDiv.textContent = rem;
         }
     }
 
-    console.log("Grid II created in #new-grid-three (10x10).");
-
     /***EXPLANATION::
-     * This grid also runs 10 rows x 10 columns = 100 divs.
-     * For each column, we calculate col % 3 which gives a remainder of 0, 1, or 2.
-     * If remainder is 0: background is red; if 1: orange; if 2: yellow.
-     * Each div displays the remainder number as its text content.
+     * This creates a second 10x10 grid inside the element with id "new-grid-three".
+     * For each cell, we calculate the remainder (column % 3), which can only be 0, 1, or 2.
+     * Remainder 0 -> red, remainder 1 -> orange, remainder 2 -> yellow.
+     * Each cell displays its remainder value as text (0/1/2).
      */
 
     /*************************************** */
     /*** END PART THREE CREATE */
     /*************************************** */
-
-
-
-
-
 }
+
+
+
+
