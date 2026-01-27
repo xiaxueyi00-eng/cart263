@@ -44,7 +44,6 @@ function setup() {
     console.log(imgsInContainers[imgsInContainers.length - 1]);
 
     /***OUTPUT:
-     /***OUTPUT:
  * <img class="img-image" src="task-2-images/seventeen.png">
  */
 
@@ -190,7 +189,8 @@ function setup() {
     // /*************************************** */
     // /* 1: Select the first paragraph and replace the text within the paragraph... */
     // /***CODE */
-    // document.getElementById("1").textContent = "Xueyi Xia  2026/01/22";
+    // document.getElementById("1").textContent =
+    // "New text in paragraph one: text changed by Xueyi Xia on the following date: 2026/01/27.";
     // /*************************************** */
     // /* 2: Select all elements in the HTML that have the class name content-container
     //  and change the background color ... of first and second ...*/
@@ -223,29 +223,26 @@ function setup() {
 
 
 
-    // /*************************************** */
-    // /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
-    // then access all elements with class name inner-container and save to a variable called `innerContainers`. 
-    // Next, iterate over the colors array, and for each color: 
-    // assign the element from innerContainers variable with the same index 
-    // (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
-    // a background using that color.
-    // /***CODE */
-    // // add the array
+    // // /*************************************** */
+    // // /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
+    // // then access all elements with class name inner-container and save to a variable called `innerContainers`. 
+    // // Next, iterate over the colors array, and for each color: 
+    // // assign the element from innerContainers variable with the same index 
+    // // (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
+    // // a background using that color.
+    // // /***CODE */
+    // // // add the array
     // let colors = ['red', 'blue', 'green', 'orange'];
 
     // // select all elements with class "inner-container"
     // let innerContainers = document.getElementsByClassName("inner-container");
 
-    // // iterate over colors and apply each one to the matching inner-container
-    // for (let i = 0; i < colors.length; i++) {
-    //     if (innerContainers[i]) {
-    //         innerContainers[i].style.backgroundColor = colors[i];
-    //     }
+    // // // iterate over colors and apply each one to the matching inner-container
+    // for (let i = 0; i < innerContainers.length; i++) {
+    //     innerContainers[i].style.backgroundColor = colors[i % colors.length];
     // }
-
-    // /*************************************** */
-    // /*** END PART TWO MODIFY */
+    // // /*************************************** */
+    // // /*** END PART TWO MODIFY */
 
 
     /*************************************** */
@@ -264,12 +261,6 @@ function setup() {
     /***CODE */
     /*************************************** */
     /* 1: NEW PARAGRAPHS */
-    /***CODE */
-
-    /*************************************** */
-    /* 1: NEW PARAGRAPHS */
-    /***CODE */
-
     // 1A
     let allPTagsThree = document.getElementsByTagName("p");
     console.log(allPTagsThree);
@@ -311,6 +302,18 @@ function setup() {
 
     /*************************************** */
     /* 2: GRID OF BOXES */
+    /***CODE */
+
+    console.log(document.getElementsByClassName("testDiv"));
+    console.log("testDiv count BEFORE creating grid:", document.getElementsByClassName("testDiv").length);
+    /***OUTPUT:
+ * HTMLCollection(0) []
+ * testDiv count BEFORE creating grid: 0
+ */
+    /***EXPLANATION::
+  * At this moment, there are NO elements in the original HTML that have class="testDiv".
+  * So selecting ".testDiv" returns 0 elements.
+  */
     /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
     /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv. 
     /* 2C:Then append this new element to the parent variable within the function. 
@@ -380,7 +383,7 @@ function setup() {
                 returnedDiv.style.backgroundColor = "white";
                 returnedDiv.textContent = "EVEN";
             } else {
-                returnedDiv.style.backgroundColor = "purple";
+                returnedDiv.style.backgroundColor = "cornflowerblue";
                 returnedDiv.textContent = "ODD";
             }
         }
@@ -390,9 +393,13 @@ function setup() {
     console.log(allTestDivs);
     console.log("Number of testDiv elements:", allTestDivs.length);
 
+    // AFTER creating
+    console.log(document.getElementsByClassName("testDiv"));
+    console.log("testDiv count AFTER creating grid 1:", document.getElementsByClassName("testDiv").length);
+
     /***OUTPUT:
-     * HTMLCollection(100) [div.testDiv, div.testDiv, div.testDiv, ...]
-     * Number of testDiv elements: 100
+     * HTMLCollection(100) [div.testDiv, div.testDiv, ...]
+     * testDiv count AFTER creating grid 1: 100
      */
 
     /***EXPLANATION::
@@ -423,14 +430,12 @@ function setup() {
 
     // parent element for the second grid
     let newGridThree = document.getElementById("new-grid-three");
-    console.log(newGridThree);
+    newGridThree.style.position = "relative";
+    newGridThree.style.width = (cols * cellSize) + "px";
+    newGridThree.style.height = (rows * cellSize) + "px";
     /***OUTPUT:
      * <div id="new-grid-three">...</div>
      */
-
-    // make sure children positioned with absolute work correctly
-    newGridThree.style.position = "relative";
-    newGridThree.style.height = (rows * cellSize) + "px";
 
     // 3A: ANOTHER nested loop (10 rows x 10 cols)
     for (let r = 0; r < rows; r++) {
@@ -459,6 +464,12 @@ function setup() {
             returnedDiv.textContent = rem;
         }
     }
+    // OPTIONAL: show total testDiv count after BOTH grids exist
+    console.log("testDiv count AFTER grid 1 + grid 2:", document.getElementsByClassName("testDiv").length);
+
+    /***OUTPUT:
+     * testDiv count AFTER grid 1 + grid 2: 200
+     */
 
     /***EXPLANATION::
      * This creates a second 10x10 grid inside the element with id "new-grid-three".
