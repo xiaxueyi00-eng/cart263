@@ -292,12 +292,12 @@ function setup() {
         customCreateElement(allPTagsThree[i]);
     }
 
-    /***EXPLANATION::
-     * allPTagsThree stores all <p> elements on the page.
-     * customCreateElement() creates a new <p> with the text "using create Element",
-     * sets a green background with white text, and appends it to the current parent paragraph.
-     * The for loop runs once per paragraph, so every original paragraph gets a new styled paragraph added.
-     */
+    /***EXPLANATION:
+* allPTags Three stores all <p> elements on the page.
+* customCreateElement() creates a new element <p> with the text "using createElement."
+* sets a green background with white text and appends it to the current parent paragraph.
+* The for loop runs once per paragraph, so every original paragraph gets a new styled paragraph added.
+*/
 
 
     /*************************************** */
@@ -305,15 +305,12 @@ function setup() {
     /***CODE */
 
     console.log(document.getElementsByClassName("testDiv"));
-    console.log("testDiv count BEFORE creating grid:", document.getElementsByClassName("testDiv").length);
-    /***OUTPUT:
- * HTMLCollection(0) []
- * testDiv count BEFORE creating grid: 0
- */
+    console.log("testDiv count AFTER creating grid 1:", document.getElementsByClassName("testDiv").length);
     /***EXPLANATION::
   * At this moment, there are NO elements in the original HTML that have class="testDiv".
   * So selecting ".testDiv" returns 0 elements.
   */
+
     /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
     /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv. 
     /* 2C:Then append this new element to the parent variable within the function. 
@@ -369,17 +366,15 @@ function setup() {
     }
 
     console.log(document.getElementsByClassName("testDiv"));
-    /***OUTPUT:
-     * HTMLCollection(100) [div.testDiv, div.testDiv, ...]
-     * testDiv count AFTER creating grid 1: 100
-     */
+
 
     /***EXPLANATION::
-     * The nested for loop runs 10 rows x 10 columns = 100 times.
-     * Each time, customNewBoxCreate() creates and appends one <div class="testDiv"> into #new-grid.
-     * That is why selecting all elements with class "testDiv" returns 100 elements.
-     * BONUS I: even-numbered rows are white; odd-numbered rows are cornflowerblue.
-     */
+    * The nested for loop runs 10 rows x 10 columns = 100 times.
+    * Each time, customNewBoxCreate() creates and appends one <div class="testDiv"> into #new-grid.
+    * That is why selecting all elements with class "testDiv" returns 100 elements.
+    * BONUS I: even-numbered rows are white; odd-numbered rows are cornflower blue. 
+    */
+
     /*************************************** */
     /* 3: GRID OF BOXES II */
 
@@ -437,16 +432,18 @@ function setup() {
     // OPTIONAL: show total testDiv count after BOTH grids exist
     console.log("testDiv count AFTER grid 1 + grid 2:", document.getElementsByClassName("testDiv").length);
 
-    /***OUTPUT:
-     * testDiv count AFTER grid 1 + grid 2: 200
-     */
 
     /***EXPLANATION::
-     * This creates a second 10x10 grid inside the element with id "new-grid-three".
-     * For each cell, we calculate the remainder (column % 3), which can only be 0, 1, or 2.
-     * Remainder 0 -> red, remainder 1 -> orange, remainder 2 -> yellow.
-     * Each cell displays its remainder value as text (0/1/2).
-     */
+ 
+ * This creates a second 10x10 grid inside the element with id "new-grid-three."
+ 
+      * For each cell, we calculate the remainder (column % 3), which can only be 0, 1, or 2.
+ 
+      * Remainder 0 -> red, remainder 1 -> orange, remainder 2 -> yellow.
+ 
+      * Each cell displays its remainder value as text (0/1/2).
+ 
+      */
 
     /*************************************** */
     /*** END PART THREE CREATE */
