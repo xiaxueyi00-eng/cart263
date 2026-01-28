@@ -1,6 +1,6 @@
 # CART 263 – Task 2
 
-**Course:** CART 263 – Creative Computation  
+**Course:** CART 263 
 **Term:** Winter 2026  
 **Type:** Team of Two Assignment
 

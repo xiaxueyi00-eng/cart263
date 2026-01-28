@@ -286,7 +286,7 @@ function setup() {
         newP.style.color = "white";
 
         // 1G
-        parent.appendChild(newP);
+        parent.insertAdjacentElement("afterend", newP);
     }
 
     // 1H
@@ -364,10 +364,10 @@ function setup() {
             // BONUS I: even row vs odd row 
             if (j % 2 === 0) {
                 returnedDiv.style.backgroundColor = "white";
-                returnedDiv.textContent = "even";
+                returnedDiv.textContent = "EVEN";
             } else {
-                returnedDiv.style.backgroundColor = "cornflowerblue";
-                returnedDiv.textContent = "odd";
+                returnedDiv.style.backgroundColor = "purple";
+                returnedDiv.textContent = "ODD";
             }
         }
     }
