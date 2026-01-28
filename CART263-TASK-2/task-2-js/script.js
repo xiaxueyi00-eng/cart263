@@ -337,66 +337,38 @@ function setup() {
     let rows = 10;
     let cellSize = 40;
 
-    // parent for the grid
-    let newGrid = document.getElementById("new-grid");
-    console.log(newGrid);
-    /***OUTPUT:
-     * <div id="new-grid"> ... </div>   (or similar)
-     */
-
-    // allow absolute positioned children to layout correctly
-    newGrid.style.position = "relative";
-    newGrid.style.height = (rows * cellSize) + "px";
-
-    // 2A: function
     function customNewBoxCreate(parent) {
-
-        // 2B: create new div with class testDiv
         let newDiv = document.createElement("div");
         newDiv.classList.add("testDiv");
-
-        // make it visible + positionable
         newDiv.style.position = "absolute";
-        newDiv.style.width = cellSize + "px";
-        newDiv.style.height = cellSize + "px";
-        newDiv.style.border = "1px solid black";
-
-        // 2C: append
         parent.appendChild(newDiv);
-
-        // 2D: return
         return newDiv;
     }
 
-    // 2E + 2F + BONUS I
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
+    let gridParent = document.getElementById("new-grid");
+    gridParent.style.position = "relative";
 
-            let returnedDiv = customNewBoxCreate(newGrid);
+    for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+            let returnedDiv = customNewBoxCreate(gridParent);
 
-            // position
-            returnedDiv.style.left = (c * cellSize) + "px";
-            returnedDiv.style.top = (r * cellSize) + "px";
+            returnedDiv.style.left = (i * cellSize) + "px";
+            returnedDiv.style.top = (j * cellSize) + "px";
+            returnedDiv.style.width = cellSize + "px";
+            returnedDiv.style.height = cellSize + "px";
 
-            // BONUS I + BONUS II
-            if (r % 2 === 0) {
+            // BONUS I: even row vs odd row 
+            if (j % 2 === 0) {
                 returnedDiv.style.backgroundColor = "white";
-                returnedDiv.textContent = "EVEN";
+                returnedDiv.textContent = "even";
             } else {
                 returnedDiv.style.backgroundColor = "cornflowerblue";
-                returnedDiv.textContent = "ODD";
+                returnedDiv.textContent = "odd";
             }
         }
     }
-    // document how many elements are returned
-    let allTestDivs = document.getElementsByClassName("testDiv");
-    console.log(allTestDivs);
-    console.log("Number of testDiv elements:", allTestDivs.length);
 
-    // AFTER creating
     console.log(document.getElementsByClassName("testDiv"));
-    console.log("testDiv count AFTER creating grid 1:", document.getElementsByClassName("testDiv").length);
-
     /***OUTPUT:
      * HTMLCollection(100) [div.testDiv, div.testDiv, ...]
      * testDiv count AFTER creating grid 1: 100
@@ -408,8 +380,6 @@ function setup() {
      * That is why selecting all elements with class "testDiv" returns 100 elements.
      * BONUS I: even-numbered rows are white; odd-numbered rows are cornflowerblue.
      */
-
-
     /*************************************** */
     /* 3: GRID OF BOXES II */
 
