@@ -17,4 +17,5 @@ This project completes Task 2 using **only JavaScript** to access, modify, and c
 ![Part Two Result](image/part2.jpeg)
 
 ## Part Three – Create
+![Part Three Result](image/part3-1.jpeg)
 ![Part Three Result](image/part3.jpeg)
