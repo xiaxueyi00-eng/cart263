@@ -1,3 +1,6 @@
+// CART 263 – Task 2
+// Group Members: Xueyi Xia & Weini Wang
+
 window.onload = setup;
 
 /** function setup */
@@ -305,7 +308,11 @@ function setup() {
     /***CODE */
 
     console.log(document.getElementsByClassName("testDiv"));
-    console.log("testDiv count AFTER creating grid 1:", document.getElementsByClassName("testDiv").length);
+    console.log("testDiv count BEFORE creating grid 1:", document.getElementsByClassName("testDiv").length);
+    /***OUTPUT:
+ * HTMLCollection(0) []
+ * testDiv count BEFORE creating grid 1: 0
+ */
     /***EXPLANATION::
   * At this moment, there are NO elements in the original HTML that have class="testDiv".
   * So selecting ".testDiv" returns 0 elements.
@@ -366,8 +373,11 @@ function setup() {
     }
 
     console.log(document.getElementsByClassName("testDiv"));
-
-
+    console.log("testDiv count AFTER creating grid 1:", document.getElementsByClassName("testDiv").length);
+    /***OUTPUT:
+ * HTMLCollection(100) [div.testDiv, div.testDiv, ...]
+ * testDiv count AFTER creating grid 1: 100
+ */
     /***EXPLANATION::
     * The nested for loop runs 10 rows x 10 columns = 100 times.
     * Each time, customNewBoxCreate() creates and appends one <div class="testDiv"> into #new-grid.
@@ -394,56 +404,39 @@ function setup() {
     /***CODE */
 
     // parent element for the second grid
-    let newGridThree = document.getElementById("new-grid-three");
-    newGridThree.style.position = "relative";
-    newGridThree.style.width = (cols * cellSize) + "px";
-    newGridThree.style.height = (rows * cellSize) + "px";
-    /***OUTPUT:
-     * <div id="new-grid-three">...</div>
-     */
+    let grid2Parent = document.getElementById("new-grid-three");
+    grid2Parent.style.position = "relative";
+    grid2Parent.style.width = (10 * cellSize) + "px";
+    grid2Parent.style.height = (10 * cellSize) + "px";
 
-    // 3A: ANOTHER nested loop (10 rows x 10 cols)
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            let returnedDiv = customNewBoxCreate(grid2Parent);
 
-            // create a new div using the SAME function
-            let returnedDiv = customNewBoxCreate(newGridThree);
+            returnedDiv.style.left = (i * cellSize) + "px";
+            returnedDiv.style.top = (j * cellSize) + "px";
+            returnedDiv.style.width = cellSize + "px";
+            returnedDiv.style.height = cellSize + "px";
 
-            // set position in the grid
-            returnedDiv.style.left = (c * cellSize) + "px";
-            returnedDiv.style.top = (r * cellSize) + "px";
-
-            // 3B: check remainder using % operator (based on column)
-            let rem = c % 3;
-
-            // 3C: background color based on remainder
-            if (rem === 0) {
-                returnedDiv.style.backgroundColor = "red";
-            } else if (rem === 1) {
-                returnedDiv.style.backgroundColor = "orange";
+            if (i % 3 === 0) {
+                returnedDiv.style.background = "red";
+                returnedDiv.textContent = "0";
+            } else if (i % 3 === 1) {
+                returnedDiv.style.background = "orange";
+                returnedDiv.textContent = "1";
             } else {
-                returnedDiv.style.backgroundColor = "yellow";
+                returnedDiv.style.background = "yellow";
+                returnedDiv.textContent = "2";
             }
-
-            // 3D: put remainder text inside the div
-            returnedDiv.textContent = rem;
         }
     }
-    // OPTIONAL: show total testDiv count after BOTH grids exist
-    console.log("testDiv count AFTER grid 1 + grid 2:", document.getElementsByClassName("testDiv").length);
-
 
     /***EXPLANATION::
- 
- * This creates a second 10x10 grid inside the element with id "new-grid-three."
- 
-      * For each cell, we calculate the remainder (column % 3), which can only be 0, 1, or 2.
- 
-      * Remainder 0 -> red, remainder 1 -> orange, remainder 2 -> yellow.
- 
-      * Each cell displays its remainder value as text (0/1/2).
- 
-      */
+    * This creates a second 10x10 grid inside the element with id "new-grid-three."
+    * For each cell, we calculate the remainder (column % 3), which can only be 0, 1, or 2.
+    * Remainder 0 -> red, remainder 1 -> orange, remainder 2 -> yellow.
+    * Each cell displays its remainder value as text (0/1/2).
+    */
 
     /*************************************** */
     /*** END PART THREE CREATE */
