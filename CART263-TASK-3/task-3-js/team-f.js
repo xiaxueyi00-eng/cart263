@@ -1,10 +1,11 @@
+
 setup_F();
 /** THEME: JOY  */
 function setup_F() {
   console.log("in f");
   /**************************************************** */
   //get the buttons
-  activateButtons(`#TEAM_F`, "ani_canvF",aniA,aniB,aniC,aniD);
+  activateButtons(`#TEAM_F`, "ani_canvF", aniA, aniB, aniC, aniD);
 
   /**************** ANI A ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN A INSIDE HERE */
@@ -21,7 +22,7 @@ function setup_F() {
    * remember you can define other functions inside....
    * Do not change any code above or the HTML markup.
    * **/
-   
+
   function aniA(parentCanvas) {
     console.log("in ani-A -teamF");
   }
@@ -44,9 +45,25 @@ function setup_F() {
    * **/
 
   function aniB(parentCanvas) {
-      console.log("in ani-B -teamF");
-    
+    console.log("in ani-B -teamF");
   }
+
+  window.onload = function () {
+    let drawBox = document.querySelector("#draw-box-a");
+
+    drawBox.addEventListener("click", clickCallBack);
+
+    function clickCallBack(e) {
+      let rect = this.getBoundingClientRect();
+
+      let offsetX = e.clientX - rect.x;
+      let offsetY = e.clientY - rect.y;
+
+
+
+    }
+  }
+
   /****************ANI C ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE HERE */
   /****************ANI C************************************ */
@@ -68,7 +85,7 @@ function setup_F() {
    */
 
   function aniC(parentCanvas) {
-      console.log("in ani-C -teamF");
+    console.log("in ani-C -teamF");
 
     /*** THIS IS THE CALLBACK FOR KEY DOWN (* DO NOT CHANGE THE NAME *..) */
     windowKeyDownRef = function (e) {
@@ -101,8 +118,8 @@ function setup_F() {
    * remember you can define other functions inside....
    * Do not change any code above or the HTML markup.
    * **/
-    function aniD(parentCanvas) {
-      console.log("in ani-D -teamF");
-    }
+  function aniD(parentCanvas) {
+    console.log("in ani-D -teamF");
+  }
 
 }
