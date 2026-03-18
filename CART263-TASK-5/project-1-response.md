@@ -2,7 +2,7 @@
 # Project 1 Response
 
 ## Project Link Team 1
-[Project](kaikukuu.github.io/CART263-Project1/)
+[Project](https://kaikukuu.github.io/CART263-Project1/)
 
 ## Response
 This work gives me feeling that it is not like an ordinary a web page design, but more like a small interaction story or game. From the first page we can see that it does not directly show the content, It has a start screen and we need click the “Start” then can enter given me feeling of getting inside a story not just reading a webpage.
